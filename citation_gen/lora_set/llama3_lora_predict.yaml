@@ -1,0 +1,24 @@
+# model
+model_name_or_path: /mnt/workspace/lixiangyu/Meta-Llama-3-8B-Instruct
+adapter_name_or_path: /mnt/workspace/lixiangyu/cit/saves/Llama-3-8B-Instruct/lora/sft-citation
+
+# method
+stage: sft
+do_predict: true
+finetuning_type: lora
+
+# dataset
+dataset: citation_test
+template: llama3
+cutoff_len: 4096
+max_samples: 3000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+# output
+output_dir:  /mnt/workspace/lixiangyu/cit/saves/Llama-3-8B-Instruct/lora/predict-citation
+overwrite_output_dir: true
+
+# eval
+per_device_eval_batch_size: 1
+predict_with_generate: true

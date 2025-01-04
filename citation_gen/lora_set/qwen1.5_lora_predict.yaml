@@ -1,0 +1,24 @@
+# model
+model_name_or_path: /mnt/workspace/yangjingtao/reward_model/Qwen1.5-7B
+adapter_name_or_path: saves/Qwen1.5-7B/lora/sft-total-cls
+
+# method
+stage: sft
+do_predict: true
+finetuning_type: lora
+
+# dataset
+dataset: web_cls_conversion_test
+template: qwen
+cutoff_len: 4096
+max_samples: 3000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+# output
+output_dir: saves/Qwen1.5-7B/lora/predict-total-web-cls
+overwrite_output_dir: true
+
+# eval
+per_device_eval_batch_size: 1
+predict_with_generate: true
